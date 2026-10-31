@@ -1,0 +1,46 @@
+{
+  "parametros_random_forest": {
+    "n_estimators": 100,
+    "min_samples_leaf": 1,
+    "max_features": "sqrt",
+    "max_depth": 25
+  },
+  "variables_numericas": [
+    "longitude",
+    "latitude",
+    "housing_median_age",
+    "median_income",
+    "cuartos_por_hogar",
+    "personas_por_hogar",
+    "dormitorios_por_cuarto",
+    "km_a_ciudad"
+  ],
+  "variables_texto": [
+    "ocean_proximity"
+  ],
+  "numero_zonas": 4,
+  "metricas_prueba": {
+    "Responder siempre el promedio": {
+      "MAE": 79313,
+      "RMSE": 99097,
+      "R2": -0.0001
+    },
+    "Regresión lineal": {
+      "MAE": 42154,
+      "RMSE": 58066,
+      "R2": 0.6566
+    },
+    "Random Forest por defecto": {
+      "MAE": 28245,
+      "RMSE": 44277,
+      "R2": 0.8004
+    },
+    "Random Forest ajustado": {
+      "MAE": 27027,
+      "RMSE": 41891,
+      "R2": 0.8213
+    }
+  },
+  "barrios_entrenamiento": 15656,
+  "barrios_prueba": 3914
+}
