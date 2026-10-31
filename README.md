@@ -15,6 +15,8 @@ Especialización en Inteligencia Artificial · Corporación Unificada Nacional d
 | `configuracion_modelo.json` | Hiperparámetros elegidos y métricas de prueba exportados por el notebook |
 | `predicciones_prueba.csv` | Valores reales y estimados del conjunto de prueba |
 
+**App publicada:** https://santiagotoromesa-cell-aca1-aprendizaje-automatico-app-nyffmf.streamlit.app
+
 **Modelo final:** Random Forest ajustado (100 árboles, profundidad máxima 25, `max_features="sqrt"`).
 **Resultados en prueba:** MAE ≈ USD 27.000 · RMSE ≈ USD 41.900 · R² ≈ 0,82.
 

@@ -166,7 +166,7 @@ with pestana_1:
 with pestana_2:
     st.subheader("Datos depurados usados por el modelo")
     filtro = st.multiselect("Filtrar por cercanía al mar", list(CERCANIA), default=list(CERCANIA))
-    rango = st.slider("Ingreso anual del hogar (USD)", 5000, 150000, (5000, 150000), 5000)
+    rango = st.slider("Ingreso anual del hogar (USD)", 0, 160000, (0, 160000), 5000)
     vista = datos[datos["ocean_proximity"].isin([CERCANIA[f] for f in filtro])
                   & datos["median_income"].between(rango[0] / 10000, rango[1] / 10000)]
 
@@ -246,7 +246,9 @@ with pestana_4:
         eje.scatter(parte["longitude"], parte["latitude"], s=3, alpha=0.5,
                     color=colores[zona % len(colores)], label=fila["nombre"])
     eje.scatter([longitud], [latitud], color="black", s=180, marker="*", label="Barrio ingresado")
-    eje.legend(loc="upper right", markerscale=4, fontsize=8)
+    leyenda = eje.legend(loc="upper right", fontsize=8)
+    for marcador in getattr(leyenda, "legend_handles", getattr(leyenda, "legendHandles", [])):
+        marcador.set_sizes([40])
     eje.set_xlabel("Longitud")
     eje.set_ylabel("Latitud")
     columna_zonas, _ = st.columns([3, 2])
